@@ -1,0 +1,21 @@
+﻿@model Blank.Domain.Security.Models.Grupo
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="accordion">
+    <h3><a href="#">Novo grupo</a></h3>
+    <div class="filtros">
+        <form id="formGrupo" action="@Url.Action("Insere")" method="post" >
+            @Html.Partial("_Campos", Model)
+            <br clear="all"/>
+            <br clear="all"/>
+            <div class="campoBotoes">
+                <input type="submit" value="Cadastrar"  class="button" />
+                <a href="@Url.Action("Index")" class="button" >Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts{
+    head.js("@Url.Content("~/Scripts/Grupos/Novo.js")");
+}

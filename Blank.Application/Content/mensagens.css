@@ -1,0 +1,16 @@
+.msgErro {
+	color:#CC0000;
+	font-weight:bold;
+	font-size:14px;
+}
+.msgSucesso {
+	color:#006600;
+	font-weight:bold;
+	font-size:14px;
+
+}
+.msgWarn {
+	color:#EB9D06;
+	font-weight:bold;
+	font-size:14px;
+}

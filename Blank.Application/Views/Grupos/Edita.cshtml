@@ -1,0 +1,22 @@
+﻿@model Blank.Domain.Security.Models.Grupo
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="accordion">
+    <h3><a href="#">Atualização de grupo</a></h3>
+    <div class="filtros">
+        <form id="formGrupo" action="@Url.Action("Atualiza")" method="post" >
+            <input type="hidden" name="_method" value="put" />
+            @Html.Partial("_Campos", Model)
+            <br clear="all"/>
+            <br clear="all"/>
+            <div class="campoBotoes">
+                <input type="submit" value="Atualizar"  class="button" />
+                <a href="@Url.Action("Index")" class="button" >Voltar</a>
+            </div>
+        </form>
+    </div>
+</div>
+@section Scripts{
+    head.js("@Url.Content("~/Scripts/Grupos/Edita.js")");
+}

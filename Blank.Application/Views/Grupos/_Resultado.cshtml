@@ -1,0 +1,55 @@
+﻿@using Blank.Domain.Security.Models
+@model IList<Blank.Domain.Security.Models.Grupo>
+<table border="1" class="ui-widget">
+    <thead class="ui-widget-header">
+        <tr>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Inativo?</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody class="ui-widget-content">
+        @if (Model != null && Model.Any())
+        {
+            foreach(Grupo grupo in Model)
+            {
+                <tr>
+                    <td>@grupo.Id</td>
+                    <td>@grupo.Nome</td>
+                    <td>@grupo.Descricao</td>
+                    @if(grupo.EstaInativo()){
+                        <td>Sim</td>
+                    }else{
+                        <td>Não</td>
+                    }
+                    <td>
+                        <a href="@Url.Action("Edita", new { id = grupo.Id})" class="editar">Editar</a> | 
+                        @if(grupo.EstaAtivo()){
+                            <a href="@("/grupos/inativa/" + grupo.Id)" class="inativar">Inativar</a>
+                            <a href="@("/grupos/ativa/" + grupo.Id)" class="ativar" style="display: none">Ativar</a>
+                        }
+                        else
+                        {
+                            <a href="@("/grupos/inativa/" + grupo.Id)" class="inativar" style="display: none">Inativar</a>
+                            <a href="@("/grupos/ativa/" + grupo.Id)" class="ativar">Ativar</a>
+                        }
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="4" id="nenhumResultado">
+                    Nenhum grupo encontrado
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+@section Scripts{
+    head.js("@Url.Content("~/Scripts/Grupos/_Resultado.js")");
+}
+ 

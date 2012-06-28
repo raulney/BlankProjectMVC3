@@ -1,0 +1,12 @@
+BlankSolution.suo
+BlankSolution.Application/BlankSolution.Application.Publish.xml
+BlankSolution.Application/bin/
+BlankSolution.Application/obj/
+BlankSolution.Domain/bin/
+BlankSolution.Domain/obj/
+BlankSolution.Infrastructure/bin/
+BlankSolution.Infrastructure/obj/
+BlankSolution.Tests/bin/
+BlankSolution.Tests/obj/
+
+

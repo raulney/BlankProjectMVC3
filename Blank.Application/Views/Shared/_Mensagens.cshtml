@@ -1,0 +1,46 @@
+﻿@using Blank.Infrastructure.Messages
+@if (TempData["mensagem"] != null)
+{
+    <div id="basic-modal-content" title="Atenção">
+        <br />
+        @if (TempData["mensagem"] != null && (TempData["mensagem"] as Message).Type == MessageType.SUCCESS)
+        {
+            <label class="msgSucesso">@((TempData["mensagem"] as Message).Text) </label><br />    
+        }
+        @if (TempData["mensagem"] != null && (TempData["mensagem"] as Message).Type == MessageType.WARN)
+        {
+            <label class="msgWarn">@((TempData["mensagem"] as Message).Text) </label><br />    
+        }
+        @if (TempData["mensagem"] != null && (TempData["mensagem"] as Message).Type == MessageType.ERROR)
+        {
+            <label class="msgErro">@((TempData["mensagem"] as Message).Text) </label><br />    
+        }
+    </div>
+    <script type="text/javascript">
+        head.ready(function () {
+            $("#basic-modal-content").dialog({ modal: true, resizable: false }).position({ my: "center", at: "center", of: window });
+        });
+    </script>
+}
+
+@if (TempData["mensagens"] != null)
+{
+    <div id="basic-modal-content" title="Atenção">
+        <br />
+        @foreach (Message message in (TempData["mensagens"] as IList<Message>))
+        {
+            if (message.Type == MessageType.ERROR)
+            {
+                <label class="msgErro">@message.Text</label><br />    
+            }
+        }
+    </div>
+    <script type="text/javascript">
+        head.ready(function () {
+            $("#basic-modal-content").dialog({ modal: true, resizable: false }).position({ my: "center", at: "center", of: window });
+        });
+    </script>
+}
+
+
+

@@ -1,0 +1,42 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="accordion">
+    <h3><a href="#">Filtros</a></h3>
+    <div class="filtros">
+        <form id="formGrupo" action="@Url.Action("Index")" method="get" >
+            @Html.Partial("_Filtros")
+            <br clear="all"/>
+            <br clear="all"/>
+            <div class="campoBotoes">
+                <input type="button" value="Filtrar"  class="button filtraGrupos" />
+                <a href="@Url.Action("Novo")" class="button" >Novo</a>
+            </div>
+        </form>
+    </div>
+    <h3><a href="#">Resultado</a></h3>
+    <div id="resultado">
+       <table border="1" class="ui-widget">
+            <thead class="ui-widget-header">
+                <tr>
+                    <th>Código</th>
+                    <th>Nome</th>
+                    <th>Descrição</th>
+                    <th>Inativo?</th>
+                </tr>
+            </thead>
+            <tbody class="ui-widget-content">
+                <tr>
+                    <td colspan="4" id="nenhumResultado">
+                        Nenhum grupo encontrado
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section Scripts{
+    head.js("@Url.Content("~/Scripts/Grupos/Index.js")");
+}

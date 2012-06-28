@@ -1,0 +1,15 @@
+﻿@model Blank.Domain.Security.Models.Grupo
+@Html.HiddenFor(g => g.Id)
+<div class="campo">
+    @Html.LabelFor(g => g.Nome, "Nome")
+    @Html.TextBoxFor(g => g.Nome)
+</div>
+<div class="campo">
+    @Html.LabelFor(g => g.Descricao, "Descrição")
+    @Html.TextBoxFor(g => g.Descricao)
+</div>
+<div class="campo">
+    @Html.LabelFor(g => g.Inativo, "Inativo?")
+    @Html.CheckBoxFor(g => g.Inativo)
+</div>
+

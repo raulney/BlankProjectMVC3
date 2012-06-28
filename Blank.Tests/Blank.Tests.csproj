@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{187CDC2D-E03A-4198-9487-F458CDA2B425}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Blank.Tests</RootNamespace>
+    <AssemblyName>Blank.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\packages\Castle.Core.2.5.2\lib\NET35\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentNHibernate, Version=1.2.0.712, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentNHibernate.1.2.0.712\lib\FluentNHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentValidation, Version=3.2.0.0, Culture=neutral, PublicKeyToken=a82054b837897c66, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.3.2.0.0\lib\Net40\FluentValidation.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=1.0.1.0, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iesi.Collections.3.1.0.4000\lib\Net35\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Moq">
+      <HintPath>..\packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\NHibernate.3.1.0.4000\lib\Net35\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate.ByteCode.Castle">
+      <HintPath>..\packages\NHibernate.Castle.3.1.0.4000\lib\Net35\NHibernate.ByteCode.Castle.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.5.10.11092\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.mocks">
+      <HintPath>..\packages\NUnit.2.5.10.11092\lib\nunit.mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="pnunit.framework">
+      <HintPath>..\packages\NUnit.2.5.10.11092\lib\pnunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\..\..\..\..\Users\lucas.medeiros.ENOVAR\Downloads\bin\x64\System.Data.SQLite.DLL</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TechTalk.SpecFlow">
+      <HintPath>..\packages\SpecFlow.1.8.1\lib\net35\TechTalk.SpecFlow.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Helpers\MVC\Support.cs" />
+    <Compile Include="Helpers\NHibernate\NHibernateSessionFactory.cs" />
+    <Compile Include="Helpers\NHibernate\Test\RepositoryTestCase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Unit\Domain\Security\ControllersCompletos\PrimeiroCompletoController.cs" />
+    <Compile Include="Unit\Domain\Security\ControllersCompletos\SegundoCompletoController.cs" />
+    <Compile Include="Unit\Domain\Security\ControllersImcompletos\PrimeiroController.cs" />
+    <Compile Include="Unit\Domain\Security\ControllersImcompletos\SegundoController.cs" />
+    <Compile Include="Unit\Domain\Security\Factories\GeradorDeInterfacesTest.cs" />
+    <Compile Include="Unit\Domain\Security\Services\LeitorDeMetodosProtegidosTeste.cs" />
+    <Compile Include="Unit\Domain\Security\Services\LeitorDeClassesProtegidasTeste.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Blank.Application\Blank.Application.csproj">
+      <Project>{FAC55455-32B8-424D-B9F8-72F203588F52}</Project>
+      <Name>Blank.Application</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Blank.Domain\Blank.Domain.csproj">
+      <Project>{0A93AD3A-CD30-4504-A389-E406D83B972E}</Project>
+      <Name>Blank.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Blank.Infrastructure\Blank.Infrastructure.csproj">
+      <Project>{90A43E46-2C9E-4844-A3D8-D81ACFBE7F06}</Project>
+      <Name>Blank.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Integration\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

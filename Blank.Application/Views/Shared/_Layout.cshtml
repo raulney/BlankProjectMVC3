@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Blank Project</title>
+    <link href="@Url.Content("~/Content/jquery-ui.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/basic.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/mensagens.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/head.min.js")" type="text/javascript"></script>
+</head>
+<body>
+    @Html.Partial("_Mensagens")
+    @RenderBody()
+    <script type="text/javascript">
+        head.js('@Url.Content("~/Scripts/jquery.min.js")', function(){
+            head.js('@Url.Content("~/Scripts/jquery.pjax.js")')
+                .js('@Url.Content("~/Scripts/jquery-ui.min.js")')
+                .js('@Url.Content("~/Scripts/jquery.meio.mask.js")')
+                .js('@Url.Content("~/Scripts/custom-alert.js")')
+                .js('@Url.Content("~/Scripts/custom-confirm.js")')
+                .js('@Url.Content("~/Scripts/jquery.ui.datepicker-pt-BR.js")');
+            @RenderSection("Scripts", false)
+        });
+    </script>
+    @Html.WriteScriptBlocks()
+</body>
+</html>
